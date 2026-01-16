@@ -41,3 +41,16 @@ function print2() {
     totalIO = m * 10;
     console.log('Total 2:', totalIO);
 }
+
+// Expected Output (order of Total 1 and Total 2 may vary):
+// Total 1: 10
+// Total 2: 20
+
+// Explanation:
+// 1. The setTimeout schedules print1 to be called after 0 milliseconds.
+// 2. The setImmediate schedules print2 to be called immediately after the current poll phase.
+// 3. Depending on the event loop's timing, either print1 or print2 may execute first.
+// 4. print1 calculates and logs 'Total 1', then increments m.
+// 5. print2 calculates and logs 'Total 2' using the updated value of m.
+// Note: The order of 'Total 1' and 'Total 2' may vary in different runs,
+// demonstrating the behavior of the event loop with I/O operations.
