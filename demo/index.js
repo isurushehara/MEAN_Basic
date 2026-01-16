@@ -33,3 +33,12 @@ console.log('End');
 
 // Note: The order of 'Timeout 1' and 'Timeout 2' may vary in different environments,
 // but in this case, they will execute in the order they were scheduled.
+
+
+// Event Loop Cycle Phases:
+// 1. Timers Phase: Executes callbacks scheduled by setTimeout and setInterval.
+// 2. I/O Callbacks Phase: Executes callbacks for completed I/O operations.
+// 3. Idle, Prepare Phase: Internal use only.
+// 4. Poll Phase: Retrieves new I/O events; executes I/O related callbacks.
+// 5. Check Phase: Executes callbacks scheduled by setImmediate.
+// 6. Close Callbacks Phase: Executes close event callbacks, e.g., socket.on('close', ...).
